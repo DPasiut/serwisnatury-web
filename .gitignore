@@ -40,6 +40,7 @@ __screenshots__/
 
 # Claude Code
 .claude/
+claude-seo/
 
 # System files
 .DS_Store

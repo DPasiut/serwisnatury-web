@@ -1,6 +1,6 @@
 {
   "name": "serwisnatury",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "gallery:manifest": "node scripts/generate-gallery-manifest.mjs",
