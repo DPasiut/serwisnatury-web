@@ -44,13 +44,16 @@ Manifest galerii jest regenerowany automatycznie przed buildem (`prebuild`).
 
 ## Wersjonowanie
 
-Wersja w `package.json` ([Semantic Versioning](https://semver.org/)) jest podbijana **automatycznie** przez [Release Please](https://github.com/googleapis/release-please) na podstawie treści commitów na `main` — nie ręcznie.
+Deploy leci na każdy push do `main`, niezależnie od wersji — produkcja zawsze ma to co jest na `main`. Wersja w `package.json` ([Semantic Versioning](https://semver.org/)) to osobny, ręczny znacznik kamieni milowych, podbijany świadomie, nie na każdą zmianę:
 
-Wymaga to pisania commitów w formacie [Conventional Commits](https://www.conventionalcommits.org/):
+- **PATCH** (`1.0.0` → `1.0.1`) — poprawka błędu, drobna korekta treści/stylu.
+- **MINOR** (`1.0.0` → `1.1.0`) — nowa funkcjonalność wsteczne kompatybilna (np. nowa sekcja, nowy typ galerii).
+- **MAJOR** (`1.0.0` → `2.0.0`) — zmiana łamiąca dotychczasowe działanie lub duży kamień milowy (np. wdrożenie panelu admina / backendu — Etap 2).
 
-- `fix: ...` → **PATCH** (`1.0.0` → `1.0.1`)
-- `feat: ...` → **MINOR** (`1.0.0` → `1.1.0`)
-- `feat!: ...` lub commit z `BREAKING CHANGE:` w treści → **MAJOR** (`1.0.0` → `2.0.0`)
-- `chore:`, `docs:`, `ci:`, `refactor:`, `test:` → bez bumpa wersji (trafiają do changeloga, ale nie zmieniają numeru)
+Po podbiciu wersji w `package.json`:
 
-Po pushu do `main` z takim commitem, workflow `release-please` sam otwiera/aktualizuje PR z podbitą wersją w `package.json` i wpisem w `CHANGELOG.md`. Zmergowanie tego PR-a tworzy git tag i GitHub Release.
+```bash
+git tag -a vX.Y.Z -m "vX.Y.Z — krótki opis"
+git push --tags
+gh release create vX.Y.Z --title "vX.Y.Z" --notes "..."
+```
