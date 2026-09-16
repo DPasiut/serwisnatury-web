@@ -26,7 +26,11 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - run: npx ng build
+      # Served under https://dpasiut.github.io/serwisnatury-web/ until a
+      # custom domain is wired up — base-href must match that subpath, or
+      # assets/JS/routing break. Switch back to "/" (and restore CNAME) once
+      # serwisnatury.pl DNS points here.
+      - run: npx ng build --base-href /serwisnatury-web/
 
       - uses: actions/upload-pages-artifact@v3
         with:
