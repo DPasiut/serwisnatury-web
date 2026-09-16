@@ -41,6 +41,7 @@ __screenshots__/
 # Claude Code
 .claude/
 claude-seo/
+*-audit/
 
 # System files
 .DS_Store
