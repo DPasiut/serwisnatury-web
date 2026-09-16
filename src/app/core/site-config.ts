@@ -12,7 +12,7 @@ export const PHONE_DOMINIK = '+48 453 022 647';
 export const PHONE_SZYMON = '+48 665 922 627';
 export const EMAIL = 'cis.uslugi@gmail.com';
 
-export const INSTAGRAM = 'https://instagram.com/';
+export const INSTAGRAM = 'https://www.instagram.com/cis__ogrody';
 export const FACEBOOK = 'https://facebook.com/';
 /** No Facebook page yet — flip to true once one exists and the link is set. */
 export const SHOW_FACEBOOK = false;
