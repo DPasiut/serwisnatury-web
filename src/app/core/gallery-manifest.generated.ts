@@ -5,49 +5,49 @@ export const GALLERY_MANIFEST: Record<string, string[]> = {
   "about": [],
   "fbonsai": [],
   "frezowanie": [
-    "images/gallery/frezowanie/frez-1.jpg",
-    "images/gallery/frezowanie/frez-2.jpg",
-    "images/gallery/frezowanie/frez-3.jpg"
+    "images/gallery/frezowanie/frez-1.webp",
+    "images/gallery/frezowanie/frez-2.webp",
+    "images/gallery/frezowanie/frez-3.webp"
   ],
   "fspirala": [],
   "hero": [
-    "images/gallery/hero/hero-1.jpg",
-    "images/gallery/hero/hero-2.jpg",
-    "images/gallery/hero/hero-3.jpg"
+    "images/gallery/hero/hero-1.webp",
+    "images/gallery/hero/hero-2.webp",
+    "images/gallery/hero/hero-3.webp"
   ],
   "krzewy": [],
   "modelowanie": [
-    "images/gallery/modelowanie/modelowanie-1.jpg",
-    "images/gallery/modelowanie/modelowanie-2.jpg",
-    "images/gallery/modelowanie/modelowanie-3.jpg"
+    "images/gallery/modelowanie/modelowanie-1.webp",
+    "images/gallery/modelowanie/modelowanie-2.webp",
+    "images/gallery/modelowanie/modelowanie-3.webp"
   ],
   "rebak": [
-    "images/gallery/rebak/rebak-1.jpg",
-    "images/gallery/rebak/rebak-2.jpg"
+    "images/gallery/rebak/rebak-1.webp",
+    "images/gallery/rebak/rebak-2.webp"
   ],
   "tuje-oferta": [
-    "images/gallery/tuje-oferta/kopane-1.jpg",
-    "images/gallery/tuje-oferta/kopane-2.jpg",
-    "images/gallery/tuje-oferta/kopane-3.jpg"
+    "images/gallery/tuje-oferta/kopane-1.webp",
+    "images/gallery/tuje-oferta/kopane-2.webp",
+    "images/gallery/tuje-oferta/kopane-3.webp"
   ],
   "tuje-oferta-sadzonki": [
-    "images/gallery/tuje-oferta-sadzonki/sadzonka-1.jpg",
-    "images/gallery/tuje-oferta-sadzonki/sadzonka-2.jpg",
-    "images/gallery/tuje-oferta-sadzonki/sadzonka-3.jpg"
+    "images/gallery/tuje-oferta-sadzonki/sadzonka-1.webp",
+    "images/gallery/tuje-oferta-sadzonki/sadzonka-2.webp",
+    "images/gallery/tuje-oferta-sadzonki/sadzonka-3.webp"
   ],
   "tuje-realizacje": [
-    "images/gallery/tuje-realizacje/tuje-realizacja-1.jpg",
-    "images/gallery/tuje-realizacje/tuje-realizacja-2.jpg",
-    "images/gallery/tuje-realizacje/tuje-realizacja-3.jpg"
+    "images/gallery/tuje-realizacje/tuje-realizacja-1.webp",
+    "images/gallery/tuje-realizacje/tuje-realizacja-2.webp",
+    "images/gallery/tuje-realizacje/tuje-realizacja-3.webp"
   ],
   "wycinka": [
-    "images/gallery/wycinka/wycinka-1.jpg",
-    "images/gallery/wycinka/wycinka-2.jpg",
-    "images/gallery/wycinka/wycinka-3.jpg",
-    "images/gallery/wycinka/wycinka-4.jpg",
-    "images/gallery/wycinka/wycinka-5.jpg"
+    "images/gallery/wycinka/wycinka-1.webp",
+    "images/gallery/wycinka/wycinka-2.webp",
+    "images/gallery/wycinka/wycinka-3.webp",
+    "images/gallery/wycinka/wycinka-4.webp",
+    "images/gallery/wycinka/wycinka-5.webp"
   ],
   "zywoploty": [
-    "images/gallery/zywoploty/zywoplot-1.jpg"
+    "images/gallery/zywoploty/zywoplot-1.webp"
   ]
 };
