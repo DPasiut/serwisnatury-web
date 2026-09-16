@@ -1,0 +1,29 @@
+<section id="uslugi" class="section section--tight">
+  <div class="page">
+    <h2 class="section__title">{{ heading | t }}</h2>
+    <p class="section__lead">{{ lead | t }}</p>
+
+    <div class="split">
+      <div class="picker">
+        @for (service of services; track service.key) {
+          <button type="button" class="picker__item"
+                  [class.is-active]="active.key === service.key"
+                  [attr.aria-current]="active.key === service.key"
+                  (click)="select(service)">
+            <span class="picker__title">{{ service.title | t }}</span>
+            <span class="picker__desc">{{ service.desc | t }}</span>
+          </button>
+        }
+      </div>
+
+      <div>
+        <app-gallery [key]="active.key" [heading]="active.galleryTitle"></app-gallery>
+      </div>
+    </div>
+
+    <div class="cta-bar">
+      <p>{{ ctaLabel | t }}</p>
+      <a class="btn btn-light cta-bar__phone" [href]="phoneHref">{{ phone }}</a>
+    </div>
+  </div>
+</section>

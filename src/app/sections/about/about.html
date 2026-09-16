@@ -1,0 +1,12 @@
+<section class="section">
+  <div class="page">
+    <h2 class="section__title">{{ heading | t }}</h2>
+
+    <div class="split">
+      <div class="about">
+        <div class="about__text" [innerHTML]="body | t"></div>
+        <div class="about__text" [innerHTML]="closing | t"></div>
+      </div>
+    </div>
+  </div>
+</section>

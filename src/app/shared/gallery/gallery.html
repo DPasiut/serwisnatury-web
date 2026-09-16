@@ -1,0 +1,27 @@
+<h3 class="gallery__heading">{{ heading() | t }}</h3>
+
+@if (lead().length) {
+  <div class="gallery__grid">
+    @for (photo of lead(); track photo; let i = $index) {
+      <figure class="gallery__tile washed" [class.gallery__tile--wide]="i === 0">
+        <img [src]="photo" [alt]="heading() | t" loading="lazy" (click)="openAt(i)">
+      </figure>
+    }
+  </div>
+} @else {
+  <p class="gallery__empty">{{ emptyLabel() }}</p>
+}
+
+@if (extra().length) {
+  <details class="gallery__more" [open]="moreOpen" (toggle)="moreOpen = $any($event.target).open">
+    <summary>{{ moreLabel() }}</summary>
+
+    <div class="gallery__grid gallery__grid--thumbs">
+      @for (photo of extra(); track photo; let i = $index) {
+        <figure class="gallery__tile washed">
+          <img [src]="photo" [alt]="heading() | t" loading="lazy" (click)="openAt(i + 3)">
+        </figure>
+      }
+    </div>
+  </details>
+}

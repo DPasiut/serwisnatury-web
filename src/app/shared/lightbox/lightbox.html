@@ -1,0 +1,15 @@
+@if (lb.isOpen()) {
+  <div class="lb" (click)="lb.close()">
+    <img class="lb__img" [src]="lb.current()" alt="" (click)="$event.stopPropagation()">
+
+    @if (lb.total() > 1) {
+      <button type="button" class="lb__nav lb__nav--prev" aria-label="Previous photo"
+              (click)="$event.stopPropagation(); lb.step(-1)">&lsaquo;</button>
+      <button type="button" class="lb__nav lb__nav--next" aria-label="Next photo"
+              (click)="$event.stopPropagation(); lb.step(1)">&rsaquo;</button>
+    }
+
+    <button type="button" class="lb__close" aria-label="Close" (click)="lb.close()">&times;</button>
+    <span class="lb__count">{{ lb.position() }} / {{ lb.total() }}</span>
+  </div>
+}

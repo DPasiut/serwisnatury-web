@@ -1,0 +1,48 @@
+<section id="tuje" class="section section--surface">
+  <div class="page">
+    <h2 class="section__title">{{ heading | t }}</h2>
+    <p class="section__lead">{{ lead | t }}</p>
+
+    <div class="split">
+      <div class="picker">
+        @for (group of groups; track group.key) {
+          <button type="button" class="picker__item"
+                  [class.is-active]="isGroupOpen(group)"
+                  [attr.aria-expanded]="isGroupOpen(group)"
+                  (click)="select(group.key)">
+            <span class="picker__title">{{ group.title | t }}</span>
+            <span class="picker__desc">{{ group.desc | t }}</span>
+          </button>
+
+          <div class="sublist" [class.is-open]="isGroupOpen(group)">
+            <div class="sublist__inner">
+              @for (sub of group.subs; track sub.label) {
+                @if (sub.key) {
+                  <button type="button" class="sublist__item sublist__item--button"
+                          [class.is-active]="activeKey === sub.key"
+                          (click)="select(sub.key!)">
+                    <span class="sublist__label">{{ sub.label }}</span>
+                  </button>
+                } @else {
+                  <div class="sublist__item">
+                    <span class="sublist__label">{{ sub.label }}</span>
+                    @if (sub.note) { <span class="sublist__note">{{ sub.note }}</span> }
+                  </div>
+                }
+              }
+            </div>
+          </div>
+        }
+      </div>
+
+      <div>
+        <app-gallery [key]="activeKey" [heading]="galleryTitle()"></app-gallery>
+      </div>
+    </div>
+
+    <div class="cta-bar">
+      <p>{{ ctaLabel | t }}</p>
+      <a class="btn btn-light cta-bar__phone" [href]="phoneHref">{{ phone }}</a>
+    </div>
+  </div>
+</section>

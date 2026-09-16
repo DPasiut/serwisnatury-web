@@ -1,0 +1,25 @@
+<section id="top" class="hero" #section>
+  <div class="hero__slices" aria-hidden="true">
+    @for (slice of slices; track slice.image; let i = $index) {
+      <div class="hero__slice" [class]="'hero__slice--' + (i + 1)">
+        <div class="hero__photo"
+             [style.background-image]="'url(' + slice.image + ')'"
+             [style.background-position]="slice.position"></div>
+      </div>
+    }
+  </div>
+
+  <div class="hero__veil" aria-hidden="true"></div>
+  <div class="hero__blob" aria-hidden="true"></div>
+
+  <div class="hero__inner page">
+    <h1 class="hero__title">{{ title | t }}</h1>
+    <p class="hero__lead">{{ lead | t }}</p>
+    <p class="hero__note">{{ note | t }}</p>
+
+    <div class="hero__actions">
+      <a class="btn btn-primary" [href]="phoneHref">Zadzwoń: {{ phone }}</a>
+      <a class="btn btn-outline-light" href="#obszar">{{ ctaArea | t }}</a>
+    </div>
+  </div>
+</section>

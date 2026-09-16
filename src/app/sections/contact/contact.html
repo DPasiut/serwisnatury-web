@@ -1,0 +1,78 @@
+<section id="kontakt" class="contact">
+  <div class="page">
+    <h2 class="section__title contact__title">{{ heading | t }}</h2>
+    <p class="contact__lead">{{ lead | t }}</p>
+
+    <div class="contact__cols">
+      <div class="contact__info">
+        <div>
+          <p class="contact__kicker">{{ callLabel | t }}</p>
+          <div class="contact__phones">
+            <div>
+              <span class="contact__kicker contact__kicker--tight">{{ salesLabel | t }}</span>
+              <a class="contact__phone" [href]="phoneSalesHref">{{ phoneSales }}</a>
+            </div>
+            <div>
+              <span class="contact__kicker contact__kicker--tight">{{ quotesLabel | t }}</span>
+              <a class="contact__phone" [href]="phoneQuotesHref">{{ phoneQuotes }}</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="contact__kicker">{{ writeLabel | t }}</p>
+          <a class="contact__email" [href]="'mailto:' + email">{{ email }}</a>
+        </div>
+
+        <div>
+          <p class="contact__kicker">{{ socialLabel | t }}</p>
+          <div class="contact__social">
+            <a class="btn btn-light" [href]="instagram" target="_blank" rel="noopener">
+              <app-instagram-icon [size]="19"></app-instagram-icon>
+              Instagram
+            </a>
+            @if (showFacebook) {
+              <a class="btn btn-light" [href]="facebook" target="_blank" rel="noopener">
+                <app-facebook-icon [size]="19"></app-facebook-icon>
+                Facebook
+              </a>
+            }
+          </div>
+        </div>
+      </div>
+
+      @if (showQuoteForm) {
+        <form class="form" (ngSubmit)="submit()" #quoteForm="ngForm">
+          <div class="form__row">
+            <label>
+              <span>{{ nameLabel | t }}</span>
+              <input class="input" type="text" name="name" required [(ngModel)]="model.name">
+            </label>
+            <label>
+              <span>{{ phoneLabel | t }}</span>
+              <input class="input" type="tel" name="phone" required [(ngModel)]="model.phone">
+            </label>
+          </div>
+
+          <label>
+            <span>{{ placeLabel | t }}</span>
+            <input class="input" type="text" name="place" [(ngModel)]="model.place">
+          </label>
+
+          <label>
+            <span>{{ messageLabel | t }}</span>
+            <textarea class="input" name="message" rows="4" [(ngModel)]="model.message"></textarea>
+          </label>
+
+          <button type="submit" class="btn btn-primary btn-block" [disabled]="quoteForm.invalid">
+            {{ submitLabel | t }}
+          </button>
+
+          @if (sent) {
+            <p class="form__thanks" role="status">{{ thanks | t }}</p>
+          }
+        </form>
+      }
+    </div>
+  </div>
+</section>

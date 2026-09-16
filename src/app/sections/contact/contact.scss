@@ -1,0 +1,89 @@
+.contact {
+  padding: 112px 32px;
+  background: var(--color-accent-2-700);
+  color: var(--color-neutral-100);
+}
+
+.contact__title { margin: 0 0 24px; color: var(--color-neutral-100); }
+
+.contact__lead {
+  margin: 0 0 40px;
+  max-width: 46em;
+  font-size: 18px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.contact__cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 64px;
+}
+
+.contact__info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.contact__kicker {
+  margin: 0 0 20px;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent-2-300);
+}
+.contact__kicker--tight { display: block; margin: 0 0 8px; }
+
+.contact__phones {
+  display: grid;
+  gap: 28px 40px;
+}
+
+.contact__phone {
+  display: inline-block;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(24px, 2.6vw, 32px);
+  line-height: 1.1;
+  color: var(--color-neutral-100);
+  border-bottom: 2px solid rgba(95, 138, 74, 0.7);
+  padding-bottom: 4px;
+}
+.contact__phone:hover { color: var(--color-accent-300); border-bottom-color: var(--color-accent-300); }
+
+.contact__email {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-neutral-100);
+  border-bottom: 2px solid rgba(95, 138, 74, 0.7);
+  padding-bottom: 3px;
+}
+.contact__email:hover { color: var(--color-accent-300); border-bottom-color: var(--color-accent-300); }
+
+.contact__social { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 36px;
+  border-radius: calc(var(--radius-lg) * 1.15);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  label { display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: var(--color-accent-2-200); }
+}
+
+.form__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 18px;
+}
+
+.form__thanks { margin: 0; font-size: 15px; color: var(--color-accent-2-200); }
+
+@media (max-width: 640px) {
+  .contact { padding: 80px 20px; }
+  .form { padding: 24px; }
+}

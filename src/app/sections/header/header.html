@@ -1,0 +1,29 @@
+<header class="hdr">
+  <div class="hdr__inner page">
+    <a class="hdr__brand" href="#top">{{ siteName }}<span>{{ siteTld }}</span></a>
+
+    <nav class="hdr__nav">
+      @for (link of nav; track link.href) {
+        <a [href]="link.href">{{ link.label | t }}</a>
+      }
+    </nav>
+
+    <div class="hdr__aside">
+      <div class="hdr__lang" role="group" aria-label="Language">
+        <button type="button" [class.is-on]="lang.lang() === 'pl'" (click)="lang.set('pl')">PL</button>
+        <button type="button" [class.is-on]="lang.lang() === 'en'" (click)="lang.set('en')">EN</button>
+      </div>
+
+      <div class="hdr__social">
+        <a [href]="instagram" target="_blank" rel="noopener" aria-label="Instagram">
+          <app-instagram-icon [size]="38"></app-instagram-icon>
+        </a>
+        @if (showFacebook) {
+          <a [href]="facebook" target="_blank" rel="noopener" aria-label="Facebook">
+            <app-facebook-icon [size]="38"></app-facebook-icon>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+</header>

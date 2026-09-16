@@ -1,0 +1,44 @@
+<section id="obszar" class="section section--wash">
+  <div class="page">
+    <h2 class="section__title area__title">{{ heading | t }}</h2>
+
+    <div class="area__cols">
+      <div>
+        <h3 class="area__sub">{{ servicesHeading | t }}</h3>
+        <div class="area__list">
+          @for (item of services; track item.pl) {
+            <p>{{ item | t }}</p>
+          }
+        </div>
+      </div>
+
+      <div>
+        <h3 class="area__sub">{{ salesHeading | t }}</h3>
+        <div class="area__list">
+          <p>
+            <span>{{ pickup | t }}</span> &mdash;
+            <span class="pin">
+              <span class="pin__chip">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                     stroke-width="2.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                Gostwica 45
+              </span>
+              <span class="pin__pop">
+                <iframe [src]="mapEmbed" title="Gostwica 45 — map" width="100%" height="220"
+                        loading="lazy" allowfullscreen
+                        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <a [href]="mapLink" target="_blank" rel="noopener">Otwórz w mapach</a>
+              </span>
+            </span>
+          </p>
+          @for (item of sales; track item.pl) {
+            <p>{{ item | t }}</p>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

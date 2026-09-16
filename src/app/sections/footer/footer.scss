@@ -1,0 +1,16 @@
+.ftr {
+  background: var(--color-accent-2-700);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 28px 32px;
+}
+.ftr__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.ftr__links { display: flex; gap: 24px; }
+.ftr__links a { color: rgba(255, 255, 255, 0.6); }
+.ftr__links a:hover { color: #fff; }
