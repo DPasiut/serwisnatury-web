@@ -16,6 +16,9 @@
 }
 
 .hdr__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-heading);
   font-size: 21px;
   letter-spacing: -0.01em;
@@ -24,6 +27,8 @@
   span { color: var(--color-accent-700); }
   &:hover { color: var(--color-text); }
 }
+
+.hdr__logo { display: block; width: 40px; height: 40px; object-fit: contain; }
 
 .hdr__nav {
   display: flex;

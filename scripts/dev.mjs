@@ -24,5 +24,6 @@ try {
   console.warn(`[gallery] could not watch ${GALLERY_DIR} for changes:`, err.message);
 }
 
-const ng = spawn('ng', ['serve'], { stdio: 'inherit', shell: true });
+const ngBin = process.platform === 'win32' ? 'ng.cmd' : 'ng';
+const ng = spawn(ngBin, ['serve'], { stdio: 'inherit' });
 ng.on('exit', (code) => process.exit(code ?? 0));

@@ -1,6 +1,9 @@
 <header class="hdr">
   <div class="hdr__inner page">
-    <a class="hdr__brand" href="#top">{{ siteName }}<span>{{ siteTld }}</span></a>
+    <a class="hdr__brand" href="#top">
+      <img class="hdr__logo" src="images/brand/logo.png" alt="" width="40" height="40">
+      {{ siteName }}<span>{{ siteTld }}</span>
+    </a>
 
     <nav class="hdr__nav">
       @for (link of nav; track link.href) {
