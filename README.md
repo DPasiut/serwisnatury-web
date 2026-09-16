@@ -22,6 +22,8 @@ Planowane w kolejnych etapach:
 - **Statystyki odwiedzin** — śledzenie ruchu na stronie (liczba odwiedzin, źródła, popularne sekcje).
 - **Optymalizacja pod SEO** — meta tagi, sitemap, strukturalne dane, poprawa widoczności w wyszukiwarkach.
 - **Formularz kontaktowy z realną wysyłką** — podłączenie backendu/usługi mailowej.
+- **Dodanie sklepu**
+- **Dodanie mechanizmu kodow promocyjnych**
 
 ## Uruchomienie lokalne
 
