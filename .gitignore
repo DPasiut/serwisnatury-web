@@ -38,8 +38,11 @@ testem.log
 /typings
 __screenshots__/
 
-# Claude Code
-.claude/
+# Claude Code (rules and shared settings are committed, everything else stays local)
+.claude/*
+!.claude/rules/
+!.claude/settings.json
+CLAUDE.local.md
 claude-seo/
 *-audit/
 
