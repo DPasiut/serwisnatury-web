@@ -42,9 +42,19 @@ npm run build
 
 Manifest galerii jest regenerowany automatycznie przed buildem (`prebuild`).
 
+## Hosting i deploy
+
+Strona hostowana jest na **Cloudflare Pages** (projekt `serwisnatury`), a cały proces dev → CI/CD działa na GitHubie i GitHub Actions. Strefa DNS domeny `serwisnatury.pl` jest w Cloudflare (rejestrator: home.pl).
+
+- **Pull request do `main`** — CI (`.github/workflows/ci.yml`): typecheck, build, testy.
+- **Push do `main`** — deploy wersji dev na `https://dev.serwisnatury.pages.dev` (`.github/workflows/deploy-dev.yml`).
+- **Tag `vX.Y.Z`** — deploy produkcyjny na `https://serwisnatury.pl` (`.github/workflows/deploy-prod.yml`). Można też uruchomić ręcznie (`workflow_dispatch`).
+
+Wymagane sekrety repozytorium: `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`.
+
 ## Wersjonowanie
 
-Deploy leci na każdy push do `main`, niezależnie od wersji — produkcja zawsze ma to co jest na `main`. Wersja w `package.json` ([Semantic Versioning](https://semver.org/)) to osobny, ręczny znacznik kamieni milowych, podbijany świadomie, nie na każdą zmianę:
+Produkcja dostaje tylko otagowane wersje. Wersja w `package.json` ([Semantic Versioning](https://semver.org/)) to ręczny znacznik wydania, podbijany świadomie, nie na każdą zmianę:
 
 - **PATCH** (`1.0.0` → `1.0.1`) — poprawka błędu, drobna korekta treści/stylu.
 - **MINOR** (`1.0.0` → `1.1.0`) — nowa funkcjonalność wsteczne kompatybilna (np. nowa sekcja, nowy typ galerii).
